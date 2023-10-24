@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Drill : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Collider collider;
+    [SerializeField] private Animator animator;
+    public void ToggleOnDrill()
     {
-        
+        collider.enabled = true;
+        animator.SetBool("isDrilling", true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ToggleOffDrill()
     {
-        
+        collider.enabled = false;
+        animator.SetBool("isDrilling", false);
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Hole"))
+        {
+            collision.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 }
