@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Putter : MonoBehaviour
 {
-    [SerializeField] private Collider collider;
+    [SerializeField] private Collider _collider;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private float animationTime = 0.5F;
     public void ToggleOnRiveter()
     {
-        collider.enabled = true;
+        _collider.enabled = true;
         animator.SetTrigger("setRivet");
-        Invoke("ToggleOffRiveter", 0.5F);
+        Invoke("PutRivet", animationTime/2);
+        Invoke("ToggleOffRiveter", animationTime);
     }
     public void ToggleOffRiveter()
     {
-        collider.enabled = false;
+        _collider.enabled = false;
     }
-    public void OnCollisionEnter(Collision collision)
+    public void PutRivet()
     {
-        if (collision.gameObject.CompareTag("Hole"))
-        {
-            if (collision.gameObject.GetComponent<MeshRenderer>().enabled)
-                Instantiate(prefab, collision.transform.position, collision.transform.rotation, collision.transform);
-        }
+        Instantiate(prefab, _collider.transform.position, _collider.transform.rotation);
     }
 }

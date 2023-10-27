@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EndStage : MonoBehaviour
 {
+    public Text txt;
     public GameObject image;
     [SerializeField] private List<GameObject> toggles;
     // Start is called before the first frame update
@@ -23,6 +24,18 @@ public class EndStage : MonoBehaviour
         {
             image.SetActive(true);
             Invoke("Finish", 10);
+        }
+    }
+    void Update()
+    {
+        int score = 0;
+        foreach (var toggle in toggles)
+        {
+            if (toggle.GetComponent<Toggle>().isOn)
+            {
+                score++;
+                txt.text = score.ToString()+"/" + toggles.Count.ToString();
+            }
         }
     }
     public void Finish()

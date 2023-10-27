@@ -9,11 +9,12 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 public class GroupBlock : MonoBehaviour
 {
     public List<GameObject> Limits;
-    public List<GameObject> items; 
+    public List<GameObject> items;
     public List<Transform> basePositions;
     private Dictionary<int, XRSocketInteractor> limitDictionary = new Dictionary<int, XRSocketInteractor>();
     [SerializeField] private GameObject obj;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private bool active = true;
 
     public bool isToggle = false;
     public bool mean = false;
@@ -21,16 +22,23 @@ public class GroupBlock : MonoBehaviour
     private int i;
     private int k;
     private bool oneTimeStand = false;
-    public void Start()
+    public void Awake()
     {
+        oneTimeStand = !mean;
         i = 0;
         foreach (GameObject limit in Limits)
         {
             limitDictionary.Add(i++, limit.GetComponent<XRSocketInteractor>());
         }
     }
+    public void ActivateExecution()
+    {
+        active = true;
+    }
     public void OnToggleChange(int key)
     {
+        if (!active)
+            return;
         if (limitDictionary[key].hasSelection && !oneTimeStand)
         {
             oneTimeStand = !oneTimeStand;
