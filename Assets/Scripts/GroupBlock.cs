@@ -19,6 +19,7 @@ public class GroupBlock : MonoBehaviour
     public bool isToggle = false;
     public bool mean = false;
     public bool isInstantiatable = false;
+    public bool isTransferable = false;
     private int i;
     private int k;
     private bool oneTimeStand = false;
@@ -39,6 +40,12 @@ public class GroupBlock : MonoBehaviour
     {
         if (!active)
             return;
+        //if (!isTransferable)
+        //{
+        //    if (isToggle)
+        //        Invoke("check", 0.1F);
+        //    return;
+        //}
         if (limitDictionary[key].hasSelection && !oneTimeStand)
         {
             oneTimeStand = !oneTimeStand;
@@ -52,7 +59,7 @@ public class GroupBlock : MonoBehaviour
                     }
                 }
             }
-            if (!isInstantiatable)
+            if (isTransferable)
             {
                 var itemsAndLimits = items.Zip(limitDictionary, (i, l) => new { item = i, limit = l });
                 foreach (var itemAndLimit in itemsAndLimits)
@@ -79,7 +86,7 @@ public class GroupBlock : MonoBehaviour
                         Destroy(limit.Value.GetOldestInteractableSelected().transform.gameObject);
                 }
             }
-            if (!isInstantiatable)
+            if (isTransferable)
             {
                 int num = 0;
                 var itemsAndLimits = items.Zip(limitDictionary, (i, l) => new { item = i, limit = l });

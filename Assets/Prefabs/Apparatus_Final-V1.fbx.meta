@@ -3,7 +3,87 @@ guid: d5351094df3066843b3cf22967896294
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmMetal
+    second: {fileID: 2100000, guid: 19fe7834f65eb644c8aaaa1ee41b0198, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmRubberPadding
+    second: {fileID: 2100000, guid: c860fc42ead613e40bf3151833b9e370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClampMetalBig_F
+    second: {fileID: 2100000, guid: 230207544e30d3c4b810b3ef92fd5f46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClampMetalBig_M
+    second: {fileID: 2100000, guid: 7018695e880e19940b017cb082a312e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClampMetal_F
+    second: {fileID: 2100000, guid: 3c2373b9e0763f640b0ec307dc8c6105, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClampMetal_M
+    second: {fileID: 2100000, guid: e6b6ec70776fc2441b9033dddb0c77b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FrameMetal
+    second: {fileID: 2100000, guid: dbc049ce4ea7dac4abba0c5d5c4a2b62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FramePlastic
+    second: {fileID: 2100000, guid: 7aac3ca7fe51a4e439db9ba484778647, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LCapMetal
+    second: {fileID: 2100000, guid: 035f5820726fd6149a7bc1257aa3f54b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LClampMetal
+    second: {fileID: 2100000, guid: 2cd05fb6d7a2f20469c1fd00244da75f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StifelMetal
+    second: {fileID: 2100000, guid: aa2bc9af0e59d694396c56c4d784be1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingClampMetal
+    second: {fileID: 2100000, guid: bded00ca3ca46e1408b678f9ad3dac3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingClampMetal2
+    second: {fileID: 2100000, guid: f5e0d64e51543f04e8dfb818cd7b5060, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingClampRubberPadding
+    second: {fileID: 2100000, guid: 0c0fed71ece899541864c04e079377ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingFrame
+    second: {fileID: 2100000, guid: fdcbeba0d709b3d4884882456ede3818, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WingMaterial
+    second: {fileID: 2100000, guid: cb80c6a956d3dfc4ab9c0f50a3ece6d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

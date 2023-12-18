@@ -43,7 +43,7 @@ public class Ent_Clock : MonoBehaviour
     }
     void SetTime()
     {
-        armHour.transform.localEulerAngles = new Vector3(0, 0, (timeHour % 12) * 30);
+        armHour.transform.localEulerAngles = new Vector3(0, 0, (timeHour % 12) * 30 + timeMinute/2);
         armMinute.transform.localEulerAngles = new Vector3(0, 0, timeMinute * 6);
         armSecond.transform.localEulerAngles = new Vector3(0, 0, timeSecond * 6);
     }

@@ -13,11 +13,15 @@ public class PasteController : MonoBehaviour
     [SerializeField] GameObject pathStart;
     [SerializeField] GameObject pathEnd;
     [SerializeField] Material material_;
-    private bool ready = false;
-    public bool Ready
-    {
-        get; set;
-    }
+    //public bool ready = false;
+    //public void ReadyTrue()
+    //{
+    //    ready = true;
+    //}
+    //public void ReadyFalse()
+    //{
+    //    ready = false;
+    //}
 
     //ost
     [SerializeField] GameObject togle;
@@ -44,7 +48,7 @@ public class PasteController : MonoBehaviour
         float normalisedDistance = distancePlaneToEnd / distanceStartToEnd;
 
         // While the object is still "moving"
-        while (Mathf.Abs(clippingPlane.transform.position.y - endValue.y) > 0.05 && ready)
+        while (Mathf.Abs(clippingPlane.transform.position.y - endValue.y) > 0.05)
         {
             // Is the paste dispenser close enough to the end point?
             if (Vector3.Distance(clippingPlane.transform.position, pasteDispenser.transform.position) <= pasteDispenserTriggerDistance)
@@ -67,11 +71,13 @@ public class PasteController : MonoBehaviour
             yield return null;
         }
 
-        clippingPlane.GetComponentInChildren<MeshRenderer>().enabled = false;
-        // Snap plane to endpoint
-        clippingPlane.transform.position = endValue;
-        if (distancePlaneToEnd / distanceStartToEnd > 1)
+        //if (distancePlaneToEnd / distanceStartToEnd > 1)
+        //{
+            clippingPlane.GetComponentInChildren<MeshRenderer>().enabled = false;
+            // Snap plane to endpoint
+            clippingPlane.transform.position = endValue;
             togle.GetComponent<Toggle>().isOn = true;
+        //}
 
         //Debug.Log("Ended coroutine in " + timeElapsed + " seconds.");
     }
