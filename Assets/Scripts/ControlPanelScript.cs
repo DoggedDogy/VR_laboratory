@@ -8,6 +8,7 @@ public class ControlPanelScript : MonoBehaviour
 {
     [SerializeField] TextMeshPro temperatureText;
     [SerializeField] TextMeshPro timeText;
+    public bool isLightResponsible = true;
     private int temperature = 40;
     private int time = 10;
     private float preassure = 0;
@@ -29,7 +30,8 @@ public class ControlPanelScript : MonoBehaviour
         {
             toChange.isOn = true;
         }
-        else        {
+        else        
+        {
             toChange.isOn = false;
         }
     }
@@ -48,16 +50,23 @@ public class ControlPanelScript : MonoBehaviour
     public void StopProcess(float reference)
     {
         StopAllCoroutines();
-        greenLight.enabled = false;
-        greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
+
+        if (isLightResponsible)
+        {
+            greenLight.enabled = false;
+            greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
+        }
         preassure = 0;
         time = 10;
         timeText.text = "Осталось: " + time.ToString() + "c";
-        preasureArrow.GetComponent<Transform>().Rotate(Vector3.up, -27.15F);
+        preasureArrow.GetComponent<Transform>().Rotate(Vector3.up, reference);
     }
     IEnumerator GoUp(float reference)
     {
-        greenLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
+        if (isLightResponsible)
+        {
+            greenLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
+        }
         while (preassure < reference)
         {
             yield return new WaitForSeconds(0.05F);
@@ -77,9 +86,12 @@ public class ControlPanelScript : MonoBehaviour
             time -= 1;
             timeText.text = "Осталось: " + time.ToString() + "c";
         }
-        greenLight.enabled = false;
-        greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
-        redLight.enabled = true;
-        redLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
+        if (isLightResponsible)
+        {
+            greenLight.enabled = false;
+            greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
+            redLight.enabled = true;
+            redLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
+        }
     }
 }
