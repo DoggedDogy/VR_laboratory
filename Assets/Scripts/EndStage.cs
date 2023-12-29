@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class EndStage : MonoBehaviour
 {
-    public TextMeshProUGUI txt;
+    public TextMesh txt;
     public GameObject image;
     [SerializeField] private List<GameObject> toggles;
     // Start is called before the first frame update
