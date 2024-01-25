@@ -8,10 +8,10 @@ public class ControlPanelScript : MonoBehaviour
 {
     [SerializeField] TextMeshPro temperatureText;
     [SerializeField] TextMeshPro timeText;
-    public bool isLightResponsible = true;
     private int temperature = 40;
     private int time = 10;
     private float preassure = 0;
+    public bool isToggle = false;
     [SerializeField] GameObject preasureArrow;
     [SerializeField] Toggle toChange;
     [SerializeField] Light greenLight;
@@ -26,13 +26,16 @@ public class ControlPanelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (temperature == 80)
+        if (isToggle)
         {
-            toChange.isOn = true;
-        }
-        else        
-        {
-            toChange.isOn = false;
+            if (temperature == 80)
+            {
+                toChange.isOn = true;
+            }
+            else
+            {
+                toChange.isOn = false;
+            }
         }
     }
 
@@ -50,23 +53,16 @@ public class ControlPanelScript : MonoBehaviour
     public void StopProcess(float reference)
     {
         StopAllCoroutines();
-
-        if (isLightResponsible)
-        {
-            greenLight.enabled = false;
-            greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
-        }
+        greenLight.enabled = false;
+        greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
         preassure = 0;
         time = 10;
         timeText.text = "Осталось: " + time.ToString() + "c";
-        preasureArrow.GetComponent<Transform>().Rotate(Vector3.up, reference);
+        preasureArrow.GetComponent<Transform>().Rotate(Vector3.up, -27.15F);
     }
     IEnumerator GoUp(float reference)
     {
-        if (isLightResponsible)
-        {
-            greenLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
-        }
+        greenLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
         while (preassure < reference)
         {
             yield return new WaitForSeconds(0.05F);
@@ -86,12 +82,9 @@ public class ControlPanelScript : MonoBehaviour
             time -= 1;
             timeText.text = "Осталось: " + time.ToString() + "c";
         }
-        if (isLightResponsible)
-        {
-            greenLight.enabled = false;
-            greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
-            redLight.enabled = true;
-            redLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
-        }
+        greenLight.enabled = false;
+        greenLight.GetComponent<MeshRenderer>().materials[1].DisableKeyword("_EMISSION");
+        redLight.enabled = true;
+        redLight.GetComponent<MeshRenderer>().materials[1].EnableKeyword("_EMISSION");
     }
 }
