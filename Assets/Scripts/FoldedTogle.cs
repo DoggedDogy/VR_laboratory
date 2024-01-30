@@ -9,13 +9,11 @@ public class FoldedTogle : MonoBehaviour
     [SerializeField] private Toggle thisToggle;
     public void Update()
     {
-        if (!previousToggle.isOn && !thisToggle.isOn)
-            this.gameObject.SetActive(false);
-        //while (!thisToggle.isOn)
-        //{
-
-        //    CheckToggles();
-        //}
+        if (previousToggle.isOn && !thisToggle.isOn)
+        {
+            this.gameObject.SetActive(true);
+            CheckToggles();
+        }
     }
     private void CheckToggles()
     {
