@@ -7802,8 +7802,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 634535018}
   m_HandleRect: {fileID: 634535017}
   m_Direction: 2
-  m_Value: 0.5292969
-  m_Size: 0.2
+  m_Value: 0.4116211
+  m_Size: 0.19999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9205,7 +9205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00049317256, y: 1506.25}
+  m_AnchoredPosition: {x: -0.00049317256, y: 1882.8125}
   m_SizeDelta: {x: 0, y: 4000}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &883154127
@@ -35231,6 +35231,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 526369633318315705, guid: 1a560c6364fb1824da7d6e13dc13d31e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4700720141630650478, guid: 1a560c6364fb1824da7d6e13dc13d31e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35286,11 +35291,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Network Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6888518455599817979, guid: 1a560c6364fb1824da7d6e13dc13d31e,
+        type: 3}
+      propertyPath: transport
+      value: 
+      objectReference: {fileID: 7512257252747675674}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a560c6364fb1824da7d6e13dc13d31e, type: 3}
+--- !u!114 &7512257252747675674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6053035932540952250, guid: 1a560c6364fb1824da7d6e13dc13d31e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7512257252747675673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &7561624874600633603
 ParticleSystem:
   m_ObjectHideFlags: 0

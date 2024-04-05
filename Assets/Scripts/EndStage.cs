@@ -41,8 +41,9 @@ public class EndStage : MonoBehaviour
     }
     public void Finish()
     {
-        SceneManager.LoadScene("START");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("START");
     }
+
     public void Close(GameObject obj)
     {
         obj.SetActive(false); 

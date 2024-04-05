@@ -6,6 +6,6 @@ public class Start : MonoBehaviour
 {
     public void Scenes (int numberScenes)
     {
-        SceneManager.LoadScene(numberScenes);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(numberScenes);
     }
 }

@@ -42,7 +42,7 @@ namespace Unity.VRTemplate
             if (m_CurrentStepIndex == 3)
             {
                 lvl1.GetComponent<Button>().interactable = true;
-                SceneManager.LoadScene(numberScenes);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(numberScenes);
             }
         }
     }
