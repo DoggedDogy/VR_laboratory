@@ -48,7 +48,7 @@ public class Drill : MonoBehaviour
         CircleRadian.fillAmount = progress;
 
         // Do stuff WHILE drilling
-        while (progress < 1.00f)
+        while (progress < 1.00f && collision != null)
         {
             float angle = Mathf.Acos(Vector3.Dot(collision.transform.up, _collider.transform.forward)) * Mathf.Rad2Deg;
             float distance = Vector3.Distance(collision.transform.position, _collider.transform.position);
@@ -69,7 +69,10 @@ public class Drill : MonoBehaviour
 
         // Do stuff AFTER drilling
         listOfKnownHoles.Remove(collision);
-        Destroy(collision.gameObject);
+        if (collision.gameObject != null)
+            Destroy(collision.gameObject);
+        collision = null;
+        progress = 0.0f;
         CircleRadian.fillAmount = 0;
         Debug.Log("Finished drilling hole. Removing hole.");
     }

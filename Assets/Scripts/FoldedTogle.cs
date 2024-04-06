@@ -15,7 +15,7 @@ public class FoldedTogle : MonoBehaviour
             CheckToggles();
         }
     }
-    private void CheckToggles()
+    public void CheckToggles()
     {
         foreach (Toggle child in this.GetComponentsInChildren<Toggle>())
         {

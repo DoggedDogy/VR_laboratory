@@ -105,7 +105,7 @@ public class GroupBlock : MonoBehaviour
             }
         }
         if (isToggle)
-            Invoke("check", 0.1F);
+            Invoke("check", 0.5F);
     }
     void check()
     {
