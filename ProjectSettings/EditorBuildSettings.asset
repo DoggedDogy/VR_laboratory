@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Useless/Start1231.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/START.unity
     guid: 26bc43d173c230544bdc9b9b14c4c85b
   - enabled: 1
@@ -20,10 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainScene 1 2.unity
     guid: 2eda62678531e3f44bd5b29d55999773
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InfuserScene/FuturisticRoom.unity
     guid: 825a811c60da48d439c3a68bb2275ab3
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: c27786961358c7144b03dfd5e5b5ed27,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c26cd0957ba5c74409b82a5780e98890,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 30d32e085075d9a47b0bd96e152218ad,

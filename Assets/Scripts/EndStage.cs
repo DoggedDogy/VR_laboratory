@@ -10,6 +10,16 @@ public class EndStage : MonoBehaviour
     public TextMeshProUGUI txt;
     public GameObject image;
     [SerializeField] private List<GameObject> toggles;
+    public WebManager webManager;
+    int score = 0;
+    private void Start()
+    {
+
+        if (GameObject.Find("WebComponent"))
+        {
+            webManager = GameObject.Find("WebComponent").gameObject.GetComponent<WebManager>();
+        }
+    }
     // Start is called before the first frame update
     public void OnToggleChange()
     {
@@ -26,18 +36,17 @@ public class EndStage : MonoBehaviour
             image.SetActive(true);
             Invoke("Finish", 10);
         }
-    }
-    void Update()
-    {
-        int score = 0;
-        foreach (var toggle in toggles)
+        if (k != score)
         {
-            if (toggle.GetComponent<Toggle>().isOn)
-            {
-                score++;
-                txt.text = score.ToString()+"/" + toggles.Count.ToString();
-            }
+            score = k;
+            txt.text = score.ToString() + "/" + toggles.Count.ToString();
+            webManager.work.Done_Steps = score;
+            webManager.sendPutRequest();
         }
+    }
+    public void OnToggleUpdate()
+    {
+        
     }
     public void Finish()
     {

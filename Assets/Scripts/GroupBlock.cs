@@ -8,22 +8,23 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
 public class GroupBlock : MonoBehaviour
 {
-    public List<GameObject> Limits;
-    public List<GameObject> items;
-    public List<Transform> basePositions;
-    private Dictionary<int, XRSocketInteractor> limitDictionary = new Dictionary<int, XRSocketInteractor>();
-    [SerializeField] private GameObject obj;
-    [SerializeField] private GameObject prefab;
+    public List<GameObject> Limits; //Список слотов
+    public List<GameObject> items; //Список предметов для установки
+    public List<Transform> basePositions; //Список начальных позиций
+    private Dictionary<int, XRSocketInteractor> limitDictionary = new Dictionary<int, XRSocketInteractor>(); //Список компонентов слотов
+    [SerializeField] private GameObject obj; //объект шага в списке действий
+    [SerializeField] private GameObject prefab; //Экземпляр объекта для создания в слотах
     [SerializeField] private bool active = true;
 
-    public bool isToggle = false;
-    public bool mean = false;
-    public bool isInstantiatable = false;
-    public bool isTransferable = false;
+    public bool isToggle = false; //ответственность за шаг работы
+    public bool mean = false; //на какое действие переключать шаг (установку или изъятие объектов)
+    public bool isInstantiatable = false; //1 тип установки предмета
+    public bool isTransferable = false; //2 тип установки предмета
     private int i;
     private int k;
     private bool oneTimeStand = false;
-    public void Awake()
+    
+    public void Awake() //Создание словаря компонентов слотов
     {
         oneTimeStand = !mean;
         i = 0;
@@ -36,7 +37,7 @@ public class GroupBlock : MonoBehaviour
     {
         active = true;
     }
-    public void OnToggleChange(int key)
+    public void OnToggleChange(int key) //Установка предметов в слоты, кроме того, который инициировал метод
     {
         if (!active)
             return;
@@ -107,7 +108,7 @@ public class GroupBlock : MonoBehaviour
         if (isToggle)
             Invoke("check", 0.5F);
     }
-    void check()
+    void check() //переключение состояния шага на "выполнено"
     {
         k = Limits.Count;
         foreach (var limit in Limits)

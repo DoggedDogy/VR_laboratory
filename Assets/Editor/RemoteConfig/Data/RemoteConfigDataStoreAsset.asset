@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  <dataStoreStatus>k__BackingField: 0
+  <configId>k__BackingField: 
+  <currentEnvironmentName>k__BackingField: production
+  <currentEnvironmentId>k__BackingField: 5272c09f-acaf-4ee7-9451-2cc25174940c
+  <currentEnvironmentIsDefault>k__BackingField: 1
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"8360ca4c-8204-4593-8978-d55e585d29a4\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Address\",\r\n      \"value\": \"192.168.1.187\",\r\n     
+    \"type\": \"string\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: '[]'
+  _environments: "[\r\n  {\r\n    \"projectId\": \"121b51fa-c9bf-47d1-b7dc-8c7e8d3a2acc\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"5272c09f-acaf-4ee7-9451-2cc25174940c\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2024-02-29T13:28:20Z\",\r\n    \"updatedAt\":
+    \"2024-02-29T13:28:20Z\"\r\n  }\r\n]"

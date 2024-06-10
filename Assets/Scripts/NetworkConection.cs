@@ -9,7 +9,7 @@ public class NetworkConection : MonoBehaviour
     public void Host()
     {
         NetworkManager.Singleton.StartHost();
-    }
+    }   
 
     // Update is called once per frame
     public void Join()
